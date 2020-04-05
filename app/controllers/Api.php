@@ -6,13 +6,13 @@ class Api extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('api_user_model');
+		$this->load->model('user_model');
 		$this->load->library('form_validation');
 	}
 
 	function index()
 	{
-		$data = $this->api_user_model->fetch_all();
+		$data = $this->user_model->fetch_all();
 		echo json_encode($data->result_array());
 	}
 
@@ -29,7 +29,7 @@ class Api extends CI_Controller {
 				'password'=>$this->input->post('password')
 			);
 
-			$this->api_user_model->insert_api($data);
+			$this->user_model->insert_api($data);
 
 			$array = array(
 				'success'=>true
@@ -51,7 +51,7 @@ class Api extends CI_Controller {
 	{
 		if($this->input->post('id'))
 		{
-			$data = $this->api_user_model->fetch_single_user($this->input->post('id'));
+			$data = $this->user_model->fetch_single_user($this->input->post('id'));
 
 			foreach($data as $row)
 			{
@@ -76,7 +76,7 @@ class Api extends CI_Controller {
 				'password'=>$this->input->post('password')
 			);
 
-			$this->api_user_model->update_api($this->input->post('id'), $data);
+			$this->user_model->update_api($this->input->post('id'), $data);
 
 			$array = array(
 				'success'=>true
@@ -98,7 +98,7 @@ class Api extends CI_Controller {
 	{
 		if($this->input->post('id'))
 		{
-			if($this->api_user_model->delete_single_user($this->input->post('id')))
+			if($this->user_model->delete_single_user($this->input->post('id')))
 			{
 				$array = array(
 
@@ -114,8 +114,5 @@ class Api extends CI_Controller {
 			echo json_encode($array);
 		}
 	}
-
 }
-
-
 ?>

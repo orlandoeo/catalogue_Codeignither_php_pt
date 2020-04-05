@@ -131,7 +131,7 @@ $(document).ready(function(){
                     fetch_data();
                     if($('#data_action').val() == "Insert")
                     {
-                        $('#success_message').html('<div class="alert alert-success">Data Inserted</div>');
+                        $('#success_message').html('<div class="alert alert-success">Product Inserted</div>');
                     }
                 }
 
@@ -183,7 +183,7 @@ $(document).ready(function(){
                 {
                     if(data.success)
                     {
-                        $('#success_message').html('<div class="alert alert-success">Data Deleted</div>');
+                        $('#success_message').html('<div class="alert alert-success">Product Deleted</div>');
                         fetch_data();
                     }
                 }
