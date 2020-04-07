@@ -1,12 +1,7 @@
 <?php
 class Category_model extends CI_Model
 {
-	function getCategory()
-    {
-		$sql = $this->db->get('category');
-		return $sql->result();
-       
-    } 
+
 	function fetch_all()
 	{
 		$this->db->order_by('id_category', 'DESC');
@@ -44,6 +39,22 @@ class Category_model extends CI_Model
 			return false;
 		}
 	}
+
+	//------------------------------------------------
+
+	
+	function num_category()
+	{
+		$number = $this->db->query("SELECT count(name) as number FROM category")->row()->number;
+		return intval($number);
+
+	}
+
+	function get_pagination($number_per_page)
+	{
+		return $this->db->get("category",$number_per_page, $this->uri->segment(3));
+	}
+
 	
 }
 
