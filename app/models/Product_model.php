@@ -38,6 +38,22 @@ class Product_model extends CI_Model
 			return false;
 		}
 	}
+
+	//------------------------------------------------
+
+	
+	function num_category()
+	{
+		$number = $this->db->query("SELECT count('name_product') as number FROM product")->row()->number;
+		return intval($number);
+
+	}
+
+	function get_pagination($number_per_page)
+	{
+		return $this->db->get("product",$number_per_page, $this->uri->segment(3));
+	}
+
 }
 
 ?>

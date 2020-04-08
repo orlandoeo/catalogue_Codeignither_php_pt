@@ -45,7 +45,7 @@ class Category_model extends CI_Model
 	
 	function num_category()
 	{
-		$number = $this->db->query("SELECT count(name) as number FROM category")->row()->number;
+		$number = $this->db->query("SELECT count('name') as number FROM category")->row()->number;
 		return intval($number);
 
 	}
