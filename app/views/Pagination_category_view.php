@@ -52,28 +52,4 @@
 </body>
 </html>
 
-<div id="categoryModal" class="modal fade">
-    <div class="modal-dialog">
-        <form method="post" id="category_form">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Add Category</h4>
-                </div>
-                <div class="modal-body">
-                    <label>Enter Category Name</label>
-                    <input type="text" name="name" id="name" class="form-control" />
-                    <span id="name_error" class="text-danger"></span>
-                    <br />
-                </div>
-                <div class="modal-footer">
-                    <input type="hidden" name="category_id" id="category_id" />
-                    <input type="hidden" name="data_action" id="data_action" value="Insert" />
-                    <input type="submit" name="action" id="action" class="btn btn-success" value="Add" />
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 
