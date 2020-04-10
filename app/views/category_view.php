@@ -20,7 +20,8 @@
                     </div>
                     <div class="col-md-6" align="right">
                         <button type="button" id="add_button" class="btn btn-info btn-xs">Add Category</button>
-                    </div>
+					</div>
+					
                 </div>
             </div>
             <div class="panel-body">

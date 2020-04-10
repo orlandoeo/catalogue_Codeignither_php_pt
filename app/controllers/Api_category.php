@@ -7,7 +7,7 @@ class Api_category extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('category_model');
-		$this->load->library('form_validation', 'pagination');
+		$this->load->library('form_validation');
 		$this->load->helper('url');
 	}
 

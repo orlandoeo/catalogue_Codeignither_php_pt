@@ -38,6 +38,23 @@ class User_model extends CI_Model
 			return false;
 		}
 	}
+
+	function login($user_name,$email,$password)
+	{
+		$this->db->where('user_name',$user_name);
+		$this->db->where('email',$email);
+		$this->db->where('password',$password);
+		$query = $this->db->get('users');
+
+		if($query->num_rows()>0)
+		{
+			return true;	
+		}else
+		{
+			return false;
+		}
+
+	}
 }
 
 ?>
