@@ -57,7 +57,7 @@
                     <h4 class="modal-title">Add Product</h4>
                 </div>
                 <div class="modal-body">
-                    <label>Enter Product Name</label>
+			   		<label>Enter Product Name</label>
                     <input type="text" name="product_name" id="product_name" class="form-control" />
                     <span id="product_name_error" class="text-danger"></span>
                     <br />
@@ -78,6 +78,7 @@
                     <span id="categorie_error" class="text-danger"></span>
                     <br />
                 </div>
+
                 <div class="modal-footer">
                     <input type="hidden" name="product_id" id="product_id" />
                     <input type="hidden" name="data_action" id="data_action" value="Insert" />

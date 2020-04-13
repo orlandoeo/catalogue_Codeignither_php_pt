@@ -8,6 +8,7 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->model('user_model');
 		$this->load->library('form_validation');
+		
 	}
 
 	function index()
@@ -17,30 +18,18 @@ class Login extends CI_Controller {
 		if($this->user_model->login($_POST['user_name'],$_POST['email'],$_POST['password']))
 		{
 			redirect('product_api');
-		}else{
-			redirect('login');
 		}
-		}
-		$this->load->view('estructure/adminLoginView');
-
-	}
-	function fetch_single()
-	{
-		if($this->input->post('id'))
-		{
-			$data = $this->user_model->fetch_single_user($this->input->post('id'));
-
-			foreach($data as $row)
+		else
 			{
-				$output['user_name']=$row['user_name'];
-				$output['email']=$row['email'];
-				$output['password']=$row['password'];
+				
+				redirect('login');
+				
 			}
-			echo json_encode($output);
 		}
+		
+		$this->load->view('estructure/adminLoginView'); 
+	
 	}
-
-
 
 }
 ?>

@@ -6,6 +6,7 @@ class Paginator_product extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("Product_model");
+		
 	}
 
 
@@ -46,8 +47,6 @@ class Paginator_product extends CI_Controller {
 		$result = $this->Product_model->get_pagination($config['per_page']);
 		$data1['consulta']=$result;
 		$this->load->view('Pagination_product_view',$data1);
-	
-		
 	}
 
 }

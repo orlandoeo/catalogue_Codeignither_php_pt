@@ -48,6 +48,7 @@ class User_model extends CI_Model
 
 		if($query->num_rows()>0)
 		{
+
 			return true;	
 		}else
 		{
@@ -55,6 +56,8 @@ class User_model extends CI_Model
 		}
 
 	}
+
+
 }
 
 ?>
